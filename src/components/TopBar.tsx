@@ -1,8 +1,8 @@
-import Categories from './AppCategories';
-import Filter from './AppFilter';
+import Categories from "./AppCategories";
+import Filter from "./AppFilter";
 
 const TopBar = () => (
-  <div className='flex flex-col lg:flex-row gap-4 justify-between m-10 '>
+  <div className="m-10 flex flex-col justify-between gap-4 xl:flex-row">
     <Categories />
     <Filter />
   </div>
