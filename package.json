@@ -12,6 +12,8 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.9.0",
     "@tailwindcss/vite": "^4.1.16",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/qs": "^6.14.0",
     "axios": "^1.12.2",
     "lodash.debounce": "^4.0.8",
     "prettier": "^3.6.2",
@@ -23,13 +25,14 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.4",
     "tailwindcss": "^4.1.16",
+    "typescript": "^5.9.3",
     "uuid": "^13.0.0",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
-    "@types/react": "^19.1.16",
-    "@types/react-dom": "^19.1.9",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react": "^5.0.4",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",

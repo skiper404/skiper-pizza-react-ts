@@ -9,4 +9,5 @@ const AppCart = () => {
     </>
   );
 };
+
 export default AppCart;

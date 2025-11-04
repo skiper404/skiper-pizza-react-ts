@@ -1,6 +1,6 @@
-import ContentLoader from "react-content-loader";
+import ContentLoader, { IContentLoaderProps } from "react-content-loader";
 
-const ProductSkeleton = (props) => (
+const ProductSkeleton: React.FC<IContentLoaderProps> = (props) => (
   <ContentLoader
     speed={2}
     width={400}

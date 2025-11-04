@@ -1,13 +1,6 @@
 import { useStore } from "../store/store";
 
-const categories = [
-  "Все",
-  "Мясные",
-  "Вегетарианские",
-  "Гриль",
-  "Острые",
-  "Закрытые",
-];
+const categories = ["Все", "Мясные", "Вегетарианские", "Гриль", "Острые"];
 
 const Categories = () => {
   const { selectedCategory, setCategory } = useStore();

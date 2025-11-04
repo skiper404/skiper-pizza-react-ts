@@ -1,9 +1,14 @@
 import React from "react";
 import { useStore } from "../../store/store";
+import type { Product } from "../../store/store";
 
 const pizzaTypes = ["Тонкое тесто", "Классическая"];
 
-const ProductCard = ({ pizza }) => {
+type ProductCardProps = {
+  pizza: Product;
+};
+
+const ProductCard = ({ pizza }: ProductCardProps) => {
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(30);
   const [isPizzaInStock] = React.useState(true);
@@ -23,7 +28,7 @@ const ProductCard = ({ pizza }) => {
   };
 
   return (
-    <li key={pizza.uniqueKey}>
+    <li key={pizza.id}>
       <div className="flex flex-col items-center gap-2 rounded-2xl p-2 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
         <img className="size-60" src={pizza.imageUrl} alt={pizza.title} />
         <div className="w-full text-center text-lg font-bold text-gray-500">

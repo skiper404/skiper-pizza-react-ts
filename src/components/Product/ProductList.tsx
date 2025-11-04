@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import ProductSkeleton from "./ProductSkeleton";
-import { useStore } from "../../store/store";
+import { useStore, type Product, type Filter } from "../../store/store";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
-const filtersFactory = {
+type FiltersFactory = Record<Filter, (a: Product, b: Product) => number>;
+
+const filtersFactory: FiltersFactory = {
   popularAsc: (a, b) => a.rating - b.rating,
   popularDesc: (a, b) => b.rating - a.rating,
   priceAsc: (a, b) => a.price - b.price,
@@ -21,7 +23,7 @@ const ProductList = () => {
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        await fetchProducts();
+        fetchProducts();
       } catch (error) {
         console.log(error);
       } finally {

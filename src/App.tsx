@@ -3,15 +3,8 @@ import AppHome from "./components/AppHome";
 import NotFound from "./components/NotFound";
 import Wrapper from "./components/AppWrapper";
 import AppCart from "./components/Cart/AppCart";
-import { useStore } from "./store/store";
-import { useEffect } from "react";
 
 function App() {
-  const { cart } = useStore();
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
   return (
     <Wrapper>
       <Routes>

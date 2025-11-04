@@ -1,5 +1,5 @@
 import TopBar from "./TopBar";
-import ProductList from "../components/Product/ProductList";
+import ProductList from "./Product/ProductList";
 import AppHeader from "./AppHeader";
 import { AppPagination } from "./AppPagination";
 

@@ -13,11 +13,9 @@ const AppSearch = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const debouncedSearch = useRef(
-    debounce(async () => await fetchProducts(), 500),
-  );
+  const debouncedSearch = useRef(debounce(() => fetchProducts(), 500));
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setSearchQuery(value);
     debouncedSearch.current();
@@ -29,7 +27,13 @@ const AppSearch = () => {
 
   useEffect(() => {
     const params = qs.parse(location.search, { ignoreQueryPrefix: true });
-    setSearchQuery(params.search || "");
+    const searchParam = params.search;
+
+    if (typeof searchParam === "string") {
+      setSearchQuery(searchParam);
+    } else {
+      setSearchQuery("");
+    }
   }, [location.search, setSearchQuery]);
 
   return (
